@@ -21,8 +21,6 @@ Point2D::Point2D(int x, int y) {
     this -> y = y;
 }
 
-Point2D::Point2D(Point2D* pt): Point2D(pt -> x, pt -> y) { }
-
 int Point2D::getX() {
     return x;
 }
@@ -37,7 +35,7 @@ double Point2D::getScalarValue() {
 }
 
 double Point2D::distanceFrom(Point2D pt) {
-    return this - pt;
+    return *this - pt;
 }
 
 void Point2D::setX(int x) {
@@ -57,13 +55,4 @@ double operator-(Point2D l, Point2D r) {
 // Checks if 2 points are the same
 bool operator==(Point2D l, Point2D r) {
     return (l.x == r.x) && (l.y == r.y);
-}
-
-Point2D Point2D::operator=(Point2D pt) {
-    if (*this == pt) {
-        return Point2D(pt);
-    } else {
-        Point2D newPt = new Point2D(pt.getX(), pt.getY());
-        return newPt;
-    }
 }
