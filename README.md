@@ -1,4 +1,4 @@
-# Compiling
+# Compiling & Executing
 
 Execute the following in sequential order:
 
